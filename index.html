@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Janus Sphere Innovations | RBYRCT</title>
+    <meta
+      name="description"
+      content="Janus Sphere Innovations develops RBYRCT, ray-by-ray computed tomography for sparse, adaptive imaging research."
+    >
+    <meta property="og:title" content="Janus Sphere Innovations">
+    <meta
+      property="og:description"
+      content="Ray-by-ray computed tomography for sparse, adaptive imaging research."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://janus-sphere.com">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Janus Sphere home">
+        <span class="brand-mark">JSI</span>
+        <span>
+          <strong>Janus Sphere</strong>
+          <small>Innovations</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#rbyrct">RBYRCT</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#demo">Demo</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/butterfly-ground-truth.png" alt="">
+          <img src="assets/marilyn-ground-truth.png" alt="">
+          <img src="assets/shepp-random-1200.png" alt="">
+          <img src="assets/shepp-fan-1200.png" alt="">
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Ray-by-ray computed tomography</p>
+          <h1 id="hero-title">Janus Sphere Innovations</h1>
+          <p class="hero-copy">
+            RBYRCT treats each ray as an information-bearing decision for sparse,
+            adaptive CT reconstruction research.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="mailto:sha@janus-sphere.com?subject=Janus%20Sphere%20RBYRCT">
+              Contact Syed
+            </a>
+            <a class="button secondary" href="#evidence">View evidence</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Research signals">
+        <div>
+          <span>Focus</span>
+          <strong>Sparse adaptive imaging</strong>
+        </div>
+        <div>
+          <span>Prototype</span>
+          <strong>WebGL research instrument</strong>
+        </div>
+        <div>
+          <span>Baselines</span>
+          <strong>Fan, random, targeted rays</strong>
+        </div>
+      </section>
+
+      <section class="section intro" id="rbyrct" aria-labelledby="rbyrct-title">
+        <div class="section-kicker">RBYRCT</div>
+        <div class="intro-grid">
+          <div>
+            <h2 id="rbyrct-title">A reconstruction method built around individual ray decisions.</h2>
+          </div>
+          <div class="intro-copy">
+            <p>
+              Conventional CT workflows often assume dense or structured ray acquisition.
+              RBYRCT explores a different control surface: choose, score, and use each
+              ray as part of an adaptive reconstruction loop.
+            </p>
+            <p>
+              The current work compares fixed fan sweeps, random sparse rays, and targeted
+              policies against visual and quantitative reconstruction feedback.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method-band" aria-label="RBYRCT method">
+        <article>
+          <span>01</span>
+          <h3>Select</h3>
+          <p>Choose each ray from a policy: fan, random, lesion-aware, or uncertainty-driven.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Project</h3>
+          <p>Trace through the phantom and update reconstruction state from sparse evidence.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Adapt</h3>
+          <p>Use coverage, error, and target-region feedback to decide where the next rays go.</p>
+        </article>
+      </section>
+
+      <section class="section evidence" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Evidence panel</div>
+            <h2 id="evidence-title">Sparse-ray behavior you can inspect.</h2>
+          </div>
+          <p>
+            These images come from the working RBYRCT WebGL/research demo and CTforBreast
+            experiment assets.
+          </p>
+        </div>
+
+        <div class="evidence-layout">
+          <div class="evidence-viewer">
+            <div class="viewer-toolbar" role="tablist" aria-label="Evidence image">
+              <button type="button" class="active" data-image="butterfly" role="tab" aria-selected="true">
+                Butterfly
+              </button>
+              <button type="button" data-image="marilyn" role="tab" aria-selected="false">
+                Marilyn
+              </button>
+              <button type="button" data-image="random" role="tab" aria-selected="false">
+                Random 1.2k
+              </button>
+              <button type="button" data-image="fan" role="tab" aria-selected="false">
+                Fan 1.2k
+              </button>
+            </div>
+            <figure>
+              <img data-evidence-image src="assets/butterfly-ground-truth.png" alt="Butterfly phantom ground truth">
+              <figcaption data-evidence-caption>
+                Butterfly ground truth, used as a textured reconstruction target.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="metrics-stack" aria-label="RBYRCT prototype metrics">
+            <div>
+              <span>Ray budget</span>
+              <strong>100-20k</strong>
+              <p>Experiment ranges across phantom families.</p>
+            </div>
+            <div>
+              <span>Comparison</span>
+              <strong>Policy arena</strong>
+              <p>Fan, random, and adaptive candidates expose sampling tradeoffs.</p>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong>Research prototype</strong>
+              <p>Not a clinical device; built for scientific exploration and collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo" id="demo" aria-labelledby="demo-title">
+        <div>
+          <div class="section-kicker">WebGL demo</div>
+          <h2 id="demo-title">A living instrument for explaining RBYRCT.</h2>
+          <p>
+            The companion demo visualizes rays, reconstruction metrics, research panels,
+            and future strategy-arena experiments. Host it on a subdomain when ready:
+            <strong>demo.janus-sphere.com</strong>.
+          </p>
+        </div>
+        <a class="button primary" href="mailto:sha@janus-sphere.com?subject=RBYRCT%20demo%20access">
+          Request demo access
+        </a>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 id="contact-title">Research, collaboration, and technical discussion.</h2>
+        </div>
+        <address>
+          <strong>Syed Hussain Ather</strong>
+          <span>Janus Sphere Innovations</span>
+          <a href="mailto:sha@janus-sphere.com">sha@janus-sphere.com</a>
+          <a href="https://janus-sphere.com">janus-sphere.com</a>
+        </address>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Janus Sphere Innovations</span>
+      <span>RBYRCT research prototype</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

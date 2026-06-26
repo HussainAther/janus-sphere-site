@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janus-sphere.com/sitemap.xml
