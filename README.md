@@ -2,6 +2,13 @@
 
 Static launch site for Janus Sphere Innovations and RBYRCT, ray-by-ray computed tomography.
 
+Current interactive features:
+
+- animated ray-field hero canvas
+- RBYRCT evidence image switcher
+- Living Lab strategy arena sketch
+- local "Ask the reconstruction" explanation prompts
+
 ## Netlify
 
 Use these settings:

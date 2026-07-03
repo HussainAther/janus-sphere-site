@@ -30,6 +30,7 @@
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
         <a href="#evidence">Evidence</a>
+        <a href="#lab">Lab</a>
         <a href="#demo">Demo</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -37,6 +38,7 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
+        <canvas class="ray-canvas" data-ray-canvas aria-hidden="true"></canvas>
         <div class="hero-media" aria-hidden="true">
           <img src="assets/butterfly-ground-truth.png" alt="">
           <img src="assets/marilyn-ground-truth.png" alt="">
@@ -166,6 +168,81 @@
               <p>Not a clinical device; built for scientific exploration and collaboration.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section lab" id="lab" aria-labelledby="lab-title">
+        <div class="section-heading lab-heading">
+          <div>
+            <div class="section-kicker">Living lab</div>
+            <h2 id="lab-title">A place where the instrument starts thinking back.</h2>
+          </div>
+          <p>
+            The public site can become an active surface for RBYRCT experiments:
+            ray strategies, reconstruction notes, visual studies, and local AI-style
+            interpretation grounded in the current run state.
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          <article class="strategy-arena" aria-labelledby="strategy-title">
+            <div class="lab-card-heading">
+              <span>Strategy arena</span>
+              <h3 id="strategy-title">Sparse policies racing under one ray budget.</h3>
+            </div>
+            <div class="strategy-controls" role="tablist" aria-label="Ray strategy">
+              <button type="button" class="active" data-strategy="adaptive" role="tab" aria-selected="true">
+                Adaptive
+              </button>
+              <button type="button" data-strategy="random" role="tab" aria-selected="false">
+                Random
+              </button>
+              <button type="button" data-strategy="fan" role="tab" aria-selected="false">
+                Fan
+              </button>
+            </div>
+            <div class="strategy-orbit" data-strategy-orbit aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+            <dl class="strategy-metrics">
+              <div>
+                <dt>Coverage</dt>
+                <dd data-metric="coverage">84%</dd>
+              </div>
+              <div>
+                <dt>Target score</dt>
+                <dd data-metric="target">1.42x</dd>
+              </div>
+              <div>
+                <dt>Ray budget</dt>
+                <dd data-metric="budget">12.5k</dd>
+              </div>
+            </dl>
+            <p data-strategy-note>
+              Adaptive policy concentrates rays around high-information regions while
+              preserving a global coverage floor.
+            </p>
+          </article>
+
+          <article class="ask-panel" aria-labelledby="ask-title">
+            <div class="lab-card-heading">
+              <span>Ask the reconstruction</span>
+              <h3 id="ask-title">Local explanations for what the image is doing.</h3>
+            </div>
+            <div class="prompt-list" aria-label="Question prompts">
+              <button type="button" data-prompt="winner">Which strategy is winning?</button>
+              <button type="button" data-prompt="lag">Why is fan lagging?</button>
+              <button type="button" data-prompt="next">Where should the next rays go?</button>
+              <button type="button" data-prompt="caption">Draft a paper caption.</button>
+            </div>
+            <div class="answer-box" data-answer-box>
+              Adaptive is the current lead because it spends fewer rays on already-covered
+              regions and keeps sampling near edges, lesions, and high-uncertainty texture.
+            </div>
+          </article>
         </div>
       </section>
 
