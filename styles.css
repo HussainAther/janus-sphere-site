@@ -249,6 +249,7 @@ nav a:hover {
 
 .intro-grid,
 .section-heading,
+.identity-field,
 .demo,
 .contact {
   display: grid;
@@ -257,6 +258,7 @@ nav a:hover {
 }
 
 .intro h2,
+.identity-field h2,
 .evidence h2,
 .demo h2,
 .contact h2 {
@@ -277,6 +279,73 @@ nav a:hover {
   gap: 1px;
   grid-template-columns: repeat(3, 1fr);
   padding: 0;
+}
+
+.identity-field {
+  align-items: center;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(41, 211, 199, 0.2), transparent 24rem),
+    linear-gradient(135deg, #071b25 0%, #10211e 45%, #0a1015 100%);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.identity-field::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+  content: "";
+  inset: 0;
+  mask-image: radial-gradient(circle at 74% 50%, black, transparent 68%);
+  opacity: 0.34;
+  pointer-events: none;
+  position: absolute;
+}
+
+.identity-copy {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.identity-copy p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+  line-height: 1.72;
+  max-width: 620px;
+}
+
+.identity-visual {
+  aspect-ratio: 1;
+  display: grid;
+  min-height: min(52vw, 560px);
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.identity-visual canvas {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.identity-mark {
+  color: #f8fbff;
+  filter: drop-shadow(0 14px 36px rgba(2, 9, 14, 0.45));
+  font-size: clamp(4.8rem, 10vw, 9rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  pointer-events: none;
+  position: relative;
+  text-shadow:
+    0 0 24px rgba(255, 255, 255, 0.22),
+    0 0 70px rgba(41, 211, 199, 0.26);
+  z-index: 2;
 }
 
 .method-band article {
@@ -689,6 +758,7 @@ address a {
   .method-band,
   .section-heading,
   .evidence-layout,
+  .identity-field,
   .lab-grid,
   .demo,
   .contact {
@@ -711,6 +781,10 @@ address a {
   .strategy-arena,
   .ask-panel {
     min-height: auto;
+  }
+
+  .identity-visual {
+    min-height: 360px;
   }
 }
 
