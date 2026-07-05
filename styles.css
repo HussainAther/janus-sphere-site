@@ -260,6 +260,7 @@ nav a:hover {
 .intro h2,
 .identity-field h2,
 .roadmap h2,
+.program h2,
 .evidence h2,
 .demo h2,
 .contact h2 {
@@ -468,6 +469,122 @@ nav a:hover {
   font-weight: 800;
   line-height: 1.2;
   padding: 10px 12px;
+}
+
+.program {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(41, 211, 199, 0.16), transparent 28rem),
+    linear-gradient(135deg, #0b1618 0%, #13231f 54%, #071011 100%);
+  color: #fff;
+}
+
+.program-heading {
+  margin-bottom: clamp(34px, 6vw, 64px);
+}
+
+.program .section-heading p,
+.program-hypothesis p,
+.program-questions p,
+.evidence-ladder p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.program-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.program-hypothesis,
+.program-questions article {
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.program-hypothesis {
+  min-height: 420px;
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.program-hypothesis span,
+.program-questions span {
+  color: var(--teal);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.program-hypothesis h3 {
+  font-size: clamp(2rem, 3.8vw, 4.2rem);
+  line-height: 0.98;
+  margin: 0 0 24px;
+}
+
+.program-hypothesis p,
+.program-questions p {
+  line-height: 1.68;
+  margin: 0;
+}
+
+.program-questions {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.program-questions article {
+  min-height: 210px;
+  padding: clamp(24px, 3vw, 38px);
+}
+
+.evidence-ladder {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: clamp(28px, 5vw, 56px);
+}
+
+.evidence-ladder article {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  min-height: 260px;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.evidence-ladder span,
+.evidence-ladder em {
+  display: block;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.evidence-ladder span {
+  color: var(--field-2);
+  font-size: 0.78rem;
+  margin-bottom: 28px;
+}
+
+.evidence-ladder strong {
+  display: block;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  line-height: 1.08;
+  min-height: 3.4rem;
+}
+
+.evidence-ladder em {
+  color: var(--teal);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin: 16px 0 14px;
+  text-transform: uppercase;
+}
+
+.evidence-ladder p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .method-band article {
@@ -883,6 +1000,9 @@ address a {
   .identity-field,
   .roadmap-path,
   .discipline-grid,
+  .program-grid,
+  .program-questions,
+  .evidence-ladder,
   .lab-grid,
   .demo,
   .contact {
