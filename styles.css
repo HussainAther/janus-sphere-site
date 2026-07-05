@@ -708,6 +708,44 @@ nav a:hover {
   margin-bottom: clamp(34px, 6vw, 64px);
 }
 
+.founder-thesis {
+  background:
+    linear-gradient(135deg, rgba(16, 33, 30, 0.96), rgba(32, 52, 45, 0.94)),
+    var(--field);
+  color: #fff;
+  margin-bottom: 1px;
+  padding: clamp(28px, 5vw, 58px);
+}
+
+.founder-thesis span,
+.validation-grid span,
+.source-grid span {
+  color: var(--teal);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.founder-thesis p {
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 750;
+  line-height: 1.42;
+  margin: 0;
+  max-width: 1120px;
+}
+
+.founder-thesis p + p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1rem, 1.5vw, 1.24rem);
+  font-weight: 650;
+  line-height: 1.66;
+  margin-top: 22px;
+  max-width: 980px;
+}
+
 .engineering-grid {
   display: grid;
   gap: 1px;
@@ -755,6 +793,71 @@ nav a:hover {
   margin: 0;
 }
 
+.engineering-grid ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.engineering-grid li {
+  color: var(--field);
+  font-size: 0.94rem;
+  font-weight: 760;
+  line-height: 1.42;
+  padding-left: 18px;
+  position: relative;
+}
+
+.engineering-grid li::before {
+  background: var(--teal);
+  content: "";
+  height: 7px;
+  left: 0;
+  position: absolute;
+  top: 0.48em;
+  width: 7px;
+}
+
+.validation-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1px;
+}
+
+.validation-grid article {
+  background: #e6ece8;
+  border-top: 5px solid var(--field-2);
+  min-height: 270px;
+  padding: clamp(24px, 3vw, 38px);
+}
+
+.validation-grid article:nth-child(2) {
+  border-top-color: var(--amber);
+}
+
+.validation-grid article:nth-child(3) {
+  border-top-color: var(--green);
+}
+
+.validation-grid span {
+  color: var(--field-2);
+}
+
+.validation-grid h3 {
+  font-size: clamp(1.35rem, 2vw, 2.1rem);
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+
+.validation-grid p {
+  color: var(--muted);
+  line-height: 1.62;
+  margin: 0;
+}
+
 .traceability-strip {
   background: var(--field);
   color: #fff;
@@ -770,6 +873,43 @@ nav a:hover {
   font-weight: 900;
   min-height: 96px;
   padding: 26px;
+}
+
+.source-grid {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: minmax(220px, 0.9fr) repeat(6, minmax(120px, 1fr));
+  margin-top: 1px;
+}
+
+.source-grid span,
+.source-grid a {
+  align-items: center;
+  display: flex;
+  min-height: 88px;
+  padding: 18px;
+}
+
+.source-grid span {
+  background: #e6ece8;
+  color: var(--field-2);
+  margin: 0;
+}
+
+.source-grid a {
+  background: #f9faf7;
+  color: var(--field);
+  font-size: 0.92rem;
+  font-weight: 880;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.source-grid a:hover {
+  background: var(--field);
+  color: #fff;
 }
 
 .research-boundary {
@@ -1202,7 +1342,9 @@ address a {
   .patent-reference,
   .evidence-ladder,
   .engineering-grid,
+  .validation-grid,
   .traceability-strip,
+  .source-grid,
   .lab-grid,
   .demo,
   .contact {

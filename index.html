@@ -31,6 +31,7 @@
         <a href="#rbyrct">RBYRCT</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#program">Program</a>
+        <a href="#engineering">Engineering</a>
         <a href="#evidence">Evidence</a>
         <a href="#lab">Lab</a>
         <a href="https://demo.janus-sphere.com">Demo</a>
@@ -318,60 +319,145 @@
         <div class="section-heading engineering-heading">
           <div>
             <div class="section-kicker">Engineering Design Reference</div>
-            <h2 id="engineering-title">From scientific idea to medical technology discipline.</h2>
+            <h2 id="engineering-title">The discipline that has to make the invention real.</h2>
           </div>
           <p>
-            Janus Sphere is organizing RBYRCT as an engineering program with
+            RBYRCT is being organized as a medical-technology evidence program:
             intended use, risk, design inputs, verification, validation, and
-            requirements traceability built in from the beginning.
+            requirements traceability are part of the work from the beginning.
+          </p>
+        </div>
+
+        <div class="founder-thesis" aria-label="Founder operating thesis">
+          <span>Founder operating thesis</span>
+          <p>
+            Our job is not to claim a better CT system prematurely. Our job is
+            to build the evidence chain that would let such a claim survive
+            physics, software, regulatory, clinical, and human-factors scrutiny.
+          </p>
+          <p>
+            The company thesis is that RBYRCT is a control problem as much as an
+            imaging problem: choose the next ray, update the reconstruction,
+            quantify uncertainty, log the decision, and trace every result back
+            to a repeatable test.
           </p>
         </div>
 
         <div class="engineering-grid" aria-label="Janus Sphere engineering design reference">
           <article>
-            <span>Document 01</span>
-            <h3>Intended Use Specification</h3>
+            <span>Use Case</span>
+            <h3>Research-stage adaptive breast CT.</h3>
             <p>
-              Defines users, patient population, environments, clinical questions,
-              development stage, and research-only boundaries.
+              We are studying whether ray-level acquisition policies can preserve
+              diagnostic information while avoiding unnecessary measurements.
+            </p>
+            <ul>
+              <li>Initial context: breast-equivalent phantoms and sparse-view simulation.</li>
+              <li>Users in view: researchers, medical physicists, radiologists, and technologists.</li>
+              <li>Boundary: not for patient diagnosis or treatment decisions.</li>
+            </ul>
+          </article>
+          <article>
+            <span>Control Loop</span>
+            <h3>Scout, adapt, reconstruct, repeat.</h3>
+            <p>
+              The internal research program treats acquisition as a closed loop:
+              an initial scout estimate, adaptive ray selection, and MART-family
+              reconstruction updates.
+            </p>
+            <ul>
+              <li>Compare sequential, stochastic, and residual-prioritized policies.</li>
+              <li>Measure dose-detectability tradeoffs under fixed ray budgets.</li>
+              <li>Keep acquisition decisions replayable and auditable.</li>
+            </ul>
+          </article>
+          <article>
+            <span>Risk Model</span>
+            <h3>Safety starts before hardware.</h3>
+            <p>
+              The risk file has to cover the ways an adaptive imaging system can
+              be wrong, overconfident, poorly calibrated, or hard to use.
+            </p>
+            <ul>
+              <li>Missed lesions, false positives, artifacts, and undersampling.</li>
+              <li>Dose concentration, scatter, detector limits, motion, and drift.</li>
+              <li>Software faults, cybersecurity, workflow delay, and use error.</li>
+            </ul>
+          </article>
+          <article>
+            <span>Validation Path</span>
+            <h3>Every claim needs a test behind it.</h3>
+            <p>
+              Simulation is the beginning. The real program is to convert promising
+              behavior into repeatable phantom, bench, software, and workflow evidence.
+            </p>
+            <ul>
+              <li>Phantom CNR/SNR, MTF, dose maps, repeatability, and robustness.</li>
+              <li>Bench steering maps, detector modeling, calibration, noise, and scatter.</li>
+              <li>Human review of uncertainty, acquisition maps, and stopping criteria.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="validation-grid" aria-label="Janus Sphere validation commitments">
+          <article>
+            <span>What we can say now</span>
+            <h3>Simulation motivates the research thesis.</h3>
+            <p>
+              Internal RBYRCT studies suggest that stochastic and adaptive
+              ray policies can reduce coherent artifacts, prioritize high-residual
+              regions, and improve sparse reconstruction behavior in controlled phantoms.
             </p>
           </article>
           <article>
-            <span>Document 02</span>
-            <h3>Risk Register</h3>
+            <span>What we will not overclaim</span>
+            <h3>No clinical claim without clinical evidence.</h3>
             <p>
-              Tracks hazards such as dose, missed lesions, artifacts, calibration
-              drift, detector failure, motion, cybersecurity, and workflow delay.
+              Dose reduction, lesion detectability, scan time, and clinical utility
+              claims must survive physical phantom work, bench performance testing,
+              regulatory review, and appropriately designed clinical studies.
             </p>
           </article>
           <article>
-            <span>Document 03</span>
-            <h3>Design Inputs</h3>
+            <span>How we build</span>
+            <h3>Medical-device discipline from day one.</h3>
             <p>
-              Translates clinical, physics, mechanical, software, AI, human factors,
-              regulatory, manufacturing, verification, and validation needs into requirements.
-            </p>
-          </article>
-          <article>
-            <span>Document 04</span>
-            <h3>Engineering Questions</h3>
-            <p>
-              Maintains a living catalog of questions about uncertainty, stopping
-              criteria, information metrics, sparse reconstruction, and clinician review.
+              The roadmap includes FDA pathway analysis, ISO 13485 quality-system
+              thinking, ISO 14971 risk management, design controls, verification,
+              validation, and human-factors engineering.
             </p>
           </article>
         </div>
 
         <div class="traceability-strip" aria-label="Requirements traceability example">
-          <span>Clinical need CN-004</span>
-          <span>Requirement AI-008</span>
-          <span>Verification test VT-008</span>
-          <span>Evidence record</span>
+          <span>Clinical need: detect small targets with bounded exposure</span>
+          <span>Requirement: adaptive policy preserves global coverage</span>
+          <span>Verification: phantom CNR, dose maps, repeatability</span>
+          <span>Evidence: replayable logs, test report, locked dataset</span>
+        </div>
+
+        <div class="source-grid" aria-label="Research and regulatory basis">
+          <span>Research and regulatory basis</span>
+          <a href="https://patents.google.com/patent/US20260041383A1/en?oq=20260041383">
+            Published patent application
+          </a>
+          <a href="https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/how-study-and-market-your-device">
+            FDA device pathway overview
+          </a>
+          <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/applying-human-factors-and-usability-engineering-medical-devices">
+            FDA human factors guidance
+          </a>
+          <a href="https://www.fda.gov/medical-devices/digital-health-center-excellence/software-medical-device-samd">
+            FDA SaMD framework
+          </a>
+          <a href="https://www.iso.org/standard/59752.html">ISO 13485</a>
+          <a href="https://www.iso.org/standard/72704.html">ISO 14971</a>
         </div>
 
         <p class="research-boundary">
           Current status: research simulation and engineering development. RBYRCT is
-          not intended for clinical diagnosis, patient care, or treatment decisions.
+          not cleared or approved for clinical diagnosis, patient care, or treatment
+          decisions.
         </p>
       </section>
 
