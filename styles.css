@@ -584,6 +584,73 @@ nav a:hover {
   top: 30px;
 }
 
+.patent-reference {
+  align-items: start;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  display: grid;
+  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(260px, 0.8fr) auto;
+  margin-top: clamp(28px, 5vw, 56px);
+  padding: clamp(26px, 4vw, 46px);
+}
+
+.patent-reference span,
+.patent-reference dt {
+  color: var(--field-2);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.patent-reference h3 {
+  font-size: clamp(1.9rem, 3.4vw, 3.8rem);
+  line-height: 0.98;
+  margin: 14px 0 18px;
+}
+
+.patent-reference p {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.58;
+  margin: 0;
+  max-width: 560px;
+}
+
+.patent-reference dl {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.patent-reference dd {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.35;
+  margin: 6px 0 0;
+}
+
+.patent-link {
+  align-self: start;
+  border: 2px solid var(--field-2);
+  color: var(--field-2);
+  font-size: 0.92rem;
+  font-weight: 900;
+  justify-self: end;
+  min-width: 190px;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.patent-link:hover {
+  background: var(--field-2);
+  color: #fff;
+}
+
 .evidence-ladder {
   display: grid;
   gap: 1px;
@@ -1048,6 +1115,7 @@ address a {
   .program-grid,
   .program-questions,
   .open-questions,
+  .patent-reference,
   .evidence-ladder,
   .lab-grid,
   .demo,
