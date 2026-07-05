@@ -259,6 +259,7 @@ nav a:hover {
 
 .intro h2,
 .identity-field h2,
+.roadmap h2,
 .evidence h2,
 .demo h2,
 .contact h2 {
@@ -346,6 +347,68 @@ nav a:hover {
     0 0 24px rgba(255, 255, 255, 0.22),
     0 0 70px rgba(41, 211, 199, 0.26);
   z-index: 2;
+}
+
+.roadmap {
+  background: #eef3ef;
+}
+
+.roadmap-heading {
+  margin-bottom: clamp(34px, 6vw, 64px);
+}
+
+.roadmap-path {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.roadmap-path article {
+  background: rgba(255, 255, 255, 0.84);
+  border-top: 5px solid var(--teal);
+  min-height: 220px;
+  padding: clamp(22px, 3vw, 34px);
+  position: relative;
+}
+
+.roadmap-path article:nth-child(3n + 2) {
+  border-top-color: var(--amber);
+}
+
+.roadmap-path article:nth-child(3n) {
+  border-top-color: var(--green);
+}
+
+.roadmap-path article::after {
+  background: linear-gradient(90deg, rgba(16, 33, 30, 0.08), transparent);
+  content: "";
+  height: 1px;
+  left: clamp(22px, 3vw, 34px);
+  position: absolute;
+  right: clamp(22px, 3vw, 34px);
+  top: 78px;
+}
+
+.roadmap-path span {
+  color: var(--field-2);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin-bottom: 36px;
+}
+
+.roadmap-path h3 {
+  font-size: clamp(1.22rem, 2vw, 1.8rem);
+  line-height: 1.06;
+  margin: 0 0 14px;
+}
+
+.roadmap-path p {
+  color: var(--muted);
+  line-height: 1.58;
+  margin: 0;
+  max-width: 340px;
 }
 
 .method-band article {
@@ -759,6 +822,7 @@ address a {
   .section-heading,
   .evidence-layout,
   .identity-field,
+  .roadmap-path,
   .lab-grid,
   .demo,
   .contact {
