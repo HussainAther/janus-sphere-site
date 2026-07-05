@@ -539,6 +539,51 @@ nav a:hover {
   padding: clamp(24px, 3vw, 38px);
 }
 
+.open-questions {
+  display: grid;
+  gap: clamp(28px, 5vw, 76px);
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  margin-top: clamp(28px, 5vw, 56px);
+}
+
+.open-questions h3 {
+  font-size: clamp(2rem, 4vw, 4.3rem);
+  line-height: 0.98;
+  margin: 0;
+  max-width: 760px;
+}
+
+.open-questions ol {
+  counter-reset: question;
+  display: grid;
+  gap: 1px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.open-questions li {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  counter-increment: question;
+  font-size: clamp(1.02rem, 1.55vw, 1.3rem);
+  font-weight: 850;
+  line-height: 1.28;
+  min-height: 116px;
+  padding: 26px 26px 26px 76px;
+  position: relative;
+}
+
+.open-questions li::before {
+  color: var(--teal);
+  content: counter(question, decimal-leading-zero);
+  font-size: 0.76rem;
+  font-weight: 950;
+  left: 26px;
+  position: absolute;
+  top: 30px;
+}
+
 .evidence-ladder {
   display: grid;
   gap: 1px;
@@ -1002,6 +1047,7 @@ address a {
   .discipline-grid,
   .program-grid,
   .program-questions,
+  .open-questions,
   .evidence-ladder,
   .lab-grid,
   .demo,
