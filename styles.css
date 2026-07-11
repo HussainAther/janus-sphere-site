@@ -103,6 +103,55 @@ nav a:hover {
   color: var(--ink);
 }
 
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.cinematic-home {
+  background: #030807;
+  color: #f6fbf9;
+  min-height: 270svh;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+}
+
+#cinematic-root {
+  min-height: 270svh;
+}
+
+.cinematic-loading {
+  align-items: start;
+  background:
+    radial-gradient(circle at 72% 38%, rgba(41, 211, 199, 0.18), transparent 28rem),
+    linear-gradient(135deg, #030807, #071512 68%, #030807);
+  display: grid;
+  gap: 14px;
+  min-height: calc(100svh - 72px);
+  padding: clamp(112px, 18vh, 180px) clamp(20px, 5vw, 78px);
+}
+
+.cinematic-loading strong {
+  display: block;
+  font-size: clamp(3rem, 8vw, 7.2rem);
+  line-height: 0.92;
+  max-width: 900px;
+}
+
+.cinematic-loading span {
+  color: rgba(246, 251, 249, 0.72);
+  font-size: clamp(1rem, 1.8vw, 1.32rem);
+  line-height: 1.55;
+  max-width: 560px;
+}
+
 .hero {
   align-items: end;
   display: grid;

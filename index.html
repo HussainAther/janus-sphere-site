@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://janus-sphere.com">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cinematic/assets/index-BY4Wcq5Y.css">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -40,27 +41,17 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <canvas class="ray-canvas" data-ray-canvas aria-hidden="true"></canvas>
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/butterfly-ground-truth.png" alt="">
-          <img src="assets/marilyn-ground-truth.png" alt="">
-          <img src="assets/shepp-random-1200.png" alt="">
-          <img src="assets/shepp-fan-1200.png" alt="">
-        </div>
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Ray-by-ray computed tomography</p>
-          <h1 id="hero-title">Janus Sphere Innovations</h1>
-          <p class="hero-copy">
-            RBYRCT treats each ray as an information-bearing decision for sparse,
-            adaptive CT reconstruction research.
-          </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="mailto:sha@janus-sphere.com?subject=Janus%20Sphere%20RBYRCT">
-              Contact Syed
-            </a>
-            <a class="button secondary" href="#evidence">View evidence</a>
+      <section class="cinematic-home" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="sr-only">
+          Janus Sphere Innovations adaptive computational imaging
+        </h1>
+        <div id="cinematic-root" data-mode="homepage">
+          <div class="cinematic-loading">
+            <p class="eyebrow">Adaptive computational imaging</p>
+            <strong>Janus Sphere Innovations</strong>
+            <span>
+              Loading the interactive RBYRCT homepage experience.
+            </span>
           </div>
         </div>
       </section>
@@ -663,6 +654,7 @@
       <span>RBYRCT research prototype</span>
     </footer>
 
+    <script type="module" src="cinematic/assets/index-Cw_JyPEG.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
