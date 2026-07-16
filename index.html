@@ -524,11 +524,57 @@
           </figure>
 
           <figure class="visual-card">
-            <img
-              src="assets/rbyrct-architecture-pitch.jpg"
-              alt="Labeled RBYRCT architecture render showing the adaptive interrogation feedback loop"
-              loading="lazy"
+            <div
+              class="hotspot-media"
+              aria-label="Interactive RBYRCT architecture map"
             >
+              <img
+                src="assets/rbyrct-architecture-pitch.jpg"
+                alt="Labeled RBYRCT architecture render showing the adaptive interrogation feedback loop"
+                loading="lazy"
+              >
+              <button class="hotspot source" type="button">
+                <span>
+                  <strong>Source</strong>
+                  Candidate emission point for the next measurement ray.
+                </span>
+              </button>
+              <button class="hotspot steering" type="button">
+                <span>
+                  <strong>Steering array</strong>
+                  Electronic or mechanical control surface for directing
+                  measurement geometry.
+                </span>
+              </button>
+              <button class="hotspot target" type="button">
+                <span>
+                  <strong>Target</strong>
+                  Phantom, tissue-equivalent volume, or region where diagnostic
+                  information is being tested.
+                </span>
+              </button>
+              <button class="hotspot detector" type="button">
+                <span>
+                  <strong>Detector</strong>
+                  Measurement plane that converts each selected ray into
+                  reconstruction evidence.
+                </span>
+              </button>
+              <button class="hotspot policy" type="button">
+                <span>
+                  <strong>Policy engine</strong>
+                  Chooses where to spend the next rays based on coverage,
+                  uncertainty, and residual error.
+                </span>
+              </button>
+              <button class="hotspot evidence-log" type="button">
+                <span>
+                  <strong>Evidence log</strong>
+                  Replayable record of ray choices, measurements, updates, and
+                  stopping criteria.
+                </span>
+              </button>
+            </div>
             <figcaption>
               <span>Architecture view</span>
               <strong>Adaptive interrogation as a control loop.</strong>

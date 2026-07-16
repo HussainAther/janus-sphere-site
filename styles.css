@@ -1030,6 +1030,165 @@ nav a:hover {
   width: 100%;
 }
 
+.hotspot-media {
+  background: #07110f;
+  position: relative;
+}
+
+.hotspot-media::after {
+  background:
+    linear-gradient(180deg, transparent 56%, rgba(5, 12, 10, 0.5)),
+    radial-gradient(circle at 42% 52%, rgba(41, 211, 199, 0.16), transparent 28%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hotspot {
+  --hotspot-accent: var(--teal);
+  --hotspot-x: 50%;
+  --hotspot-y: 50%;
+  align-items: center;
+  background: var(--hotspot-accent);
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 8px rgba(41, 211, 199, 0.16),
+    0 14px 36px rgba(0, 0, 0, 0.34);
+  color: #06110f;
+  cursor: help;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0;
+  font-weight: 950;
+  height: 20px;
+  justify-content: center;
+  left: var(--hotspot-x);
+  padding: 0;
+  position: absolute;
+  top: var(--hotspot-y);
+  transform: translate(-50%, -50%);
+  width: 20px;
+  z-index: 2;
+}
+
+.hotspot::before {
+  animation: hotspotPulse 2.8s ease-out infinite;
+  border: 1px solid var(--hotspot-accent);
+  border-radius: inherit;
+  content: "";
+  inset: -10px;
+  opacity: 0.65;
+  position: absolute;
+}
+
+.hotspot::after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: 36px;
+}
+
+.hotspot span {
+  background: rgba(7, 17, 15, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.42);
+  color: rgba(255, 255, 255, 0.78);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 650;
+  left: 50%;
+  letter-spacing: 0;
+  line-height: 1.45;
+  min-width: min(260px, 70vw);
+  opacity: 0;
+  padding: 14px;
+  pointer-events: none;
+  position: absolute;
+  text-transform: none;
+  top: calc(100% + 18px);
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.hotspot span::before {
+  background: inherit;
+  border-left: inherit;
+  border-top: inherit;
+  content: "";
+  height: 10px;
+  left: 50%;
+  position: absolute;
+  top: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+}
+
+.hotspot span strong {
+  color: #fff;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  box-shadow:
+    0 0 0 10px rgba(41, 211, 199, 0.22),
+    0 18px 48px rgba(0, 0, 0, 0.4);
+  outline: 3px solid rgba(255, 255, 255, 0.76);
+  outline-offset: 4px;
+  z-index: 5;
+}
+
+.hotspot:hover span,
+.hotspot:focus-visible span {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.hotspot.source {
+  --hotspot-accent: #e8a24a;
+  --hotspot-x: 17%;
+  --hotspot-y: 36%;
+}
+
+.hotspot.steering {
+  --hotspot-x: 34%;
+  --hotspot-y: 38%;
+}
+
+.hotspot.target {
+  --hotspot-accent: #6abd6a;
+  --hotspot-x: 58%;
+  --hotspot-y: 45%;
+}
+
+.hotspot.detector {
+  --hotspot-accent: #7267cb;
+  --hotspot-x: 86%;
+  --hotspot-y: 55%;
+}
+
+.hotspot.policy {
+  --hotspot-accent: #29d3c7;
+  --hotspot-x: 35%;
+  --hotspot-y: 72%;
+}
+
+.hotspot.evidence-log {
+  --hotspot-accent: #f04a43;
+  --hotspot-x: 70%;
+  --hotspot-y: 70%;
+}
+
 .visual-card-feature img {
   min-height: clamp(360px, 42vw, 640px);
 }
@@ -1040,7 +1199,7 @@ nav a:hover {
   padding: clamp(22px, 3vw, 34px);
 }
 
-.visual-card span {
+.visual-card figcaption > span {
   color: var(--field-2);
   display: block;
   font-size: 0.76rem;
@@ -1049,7 +1208,7 @@ nav a:hover {
   text-transform: uppercase;
 }
 
-.visual-card strong {
+.visual-card figcaption > strong {
   display: block;
   font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.08;
@@ -1374,6 +1533,18 @@ nav a:hover {
   }
 }
 
+@keyframes hotspotPulse {
+  from {
+    opacity: 0.62;
+    transform: scale(0.82);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
 .demo {
   align-items: center;
   background: var(--field-2);
@@ -1482,6 +1653,15 @@ address a {
     min-height: auto;
   }
 
+  .hotspot {
+    height: 18px;
+    width: 18px;
+  }
+
+  .hotspot span {
+    min-width: min(230px, 76vw);
+  }
+
   .signal-strip div {
     border-bottom: 1px solid rgba(255, 255, 255, 0.13);
     border-right: 0;
@@ -1525,6 +1705,17 @@ address a {
   .strategy-metrics {
     grid-template-columns: 1fr;
   }
+
+  .hotspot.source,
+  .hotspot.steering,
+  .hotspot.target {
+    --hotspot-y: 44%;
+  }
+
+  .hotspot.policy,
+  .hotspot.evidence-log {
+    --hotspot-y: 66%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1538,5 +1729,9 @@ address a {
 
   .ray-canvas {
     display: none;
+  }
+
+  .hotspot::before {
+    animation: none;
   }
 }
