@@ -15,6 +15,8 @@
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://janus-sphere.com">
+    <meta property="og:image" content="https://janus-sphere.com/assets/rbyrct-clean-render-16x9.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cinematic/assets/index-BY4Wcq5Y.css">
@@ -30,6 +32,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
+        <a href="#visuals">Visuals</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#program">Program</a>
         <a href="#engineering">Engineering</a>
@@ -488,6 +491,86 @@
           <h3>Adapt</h3>
           <p>Use coverage, error, and target-region feedback to decide where the next rays go.</p>
         </article>
+      </section>
+
+      <section class="section visual-atlas" id="visuals" aria-labelledby="visuals-title">
+        <div class="section-heading visual-heading">
+          <div>
+            <div class="section-kicker">Visual research atlas</div>
+            <h2 id="visuals-title">Making the ray-level instrument legible.</h2>
+          </div>
+          <p>
+            These public-safe 3D studies translate the RBYRCT thesis into
+            geometry: source, steering array, target, detector, feedback loop,
+            and reconstruction evidence in one visual language.
+          </p>
+        </div>
+
+        <div class="visual-atlas-grid">
+          <figure class="visual-card visual-card-feature">
+            <img
+              src="assets/rbyrct-clean-render-16x9.jpg"
+              alt="3D render of a ray steering array, translucent target phantom, detector, and RBYRCT engine"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Flagship concept render</span>
+              <strong>Ray steering, target geometry, detector path, and feedback in one frame.</strong>
+              <p>
+                A clean no-text render for explaining the basic physical layout
+                without locking the invention to a single hardware implementation.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card">
+            <img
+              src="assets/rbyrct-architecture-pitch.jpg"
+              alt="Labeled RBYRCT architecture render showing the adaptive interrogation feedback loop"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Architecture view</span>
+              <strong>Adaptive interrogation as a control loop.</strong>
+              <p>
+                The system story becomes explicit: aim, measure, reconstruct,
+                update the policy, and preserve the decision trail.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card">
+            <img
+              src="assets/rbyrct-visible-light-analog.jpg"
+              alt="Visible-light analog bench render with source, steerable mirror, phantom, camera detector, and adaptive control loop"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Visible-light analog</span>
+              <strong>A bench intuition before medical-device claims.</strong>
+              <p>
+                Non-ionizing optics can help explain steering, sensing, and
+                feedback before the project enters x-ray hardware questions.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card">
+            <img
+              src="assets/rbyrct-benchmark-board.jpg"
+              alt="Computational imaging benchmark board comparing CT geometry and sparse-view reconstruction summaries"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Benchmark framing</span>
+              <strong>Geometry, dose currency, error curves, and sparse-view evidence.</strong>
+              <p>
+                A compact bridge from visual explanation to technical diligence:
+                policy comparisons need quantitative evidence behind them.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="section evidence" id="evidence" aria-labelledby="evidence-title">

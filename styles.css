@@ -989,6 +989,78 @@ nav a:hover {
   max-width: 360px;
 }
 
+.visual-atlas {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(41, 211, 199, 0.16), transparent 28rem),
+    linear-gradient(180deg, #f7f7f2 0%, #e9efeb 100%);
+}
+
+.visual-heading {
+  align-items: start;
+}
+
+.visual-atlas-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.visual-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 64px rgba(17, 25, 22, 0.09);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.visual-card-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.visual-card img {
+  aspect-ratio: 16 / 9;
+  background: #07110f;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.visual-card-feature img {
+  min-height: clamp(360px, 42vw, 640px);
+}
+
+.visual-card figcaption {
+  display: grid;
+  gap: 12px;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.visual-card span {
+  color: var(--field-2);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.visual-card strong {
+  display: block;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.visual-card p {
+  color: var(--muted);
+  line-height: 1.62;
+  margin: 0;
+}
+
 .evidence {
   background: #edf1ec;
 }
@@ -1394,10 +1466,20 @@ address a {
   .validation-grid,
   .traceability-strip,
   .source-grid,
+  .visual-atlas-grid,
   .lab-grid,
   .demo,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .visual-card-feature {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .visual-card-feature img {
+    min-height: auto;
   }
 
   .signal-strip div {
