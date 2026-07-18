@@ -6,12 +6,12 @@
     <title>Janus Sphere Innovations | RBYRCT</title>
     <meta
       name="description"
-      content="Janus Sphere Innovations develops RBYRCT, ray-by-ray computed tomography for sparse, adaptive imaging research."
+      content="Janus Sphere Innovations develops RBYRCT, ray-by-ray computed tomography for sparse, adaptive imaging research and the Steerable Ray-by-Ray X-Ray Computed Tomography book companion."
     >
     <meta property="og:title" content="Janus Sphere Innovations">
     <meta
       property="og:description"
-      content="Ray-by-ray computed tomography for sparse, adaptive imaging research."
+      content="Ray-by-ray computed tomography for sparse, adaptive imaging research and book companion simulation."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://janus-sphere.com">
@@ -33,6 +33,7 @@
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
         <a href="#visuals">Visuals</a>
+        <a href="#book">Book</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#program">Program</a>
         <a href="#engineering">Engineering</a>
@@ -617,6 +618,163 @@
             </figcaption>
           </figure>
         </div>
+      </section>
+
+      <section class="section book-companion" id="book" aria-labelledby="book-title">
+        <div class="section-heading book-heading">
+          <div>
+            <div class="section-kicker">Book companion</div>
+            <h2 id="book-title">The End of Breast Cancer: Steerable Ray-by-Ray X-Ray Computed Tomography.</h2>
+          </div>
+          <p>
+            The title names the ambition. The public research claim is narrower
+            and testable: RBYRCT studies whether dose-limited imaging can be
+            treated as an information-allocation problem, ray by ray.
+          </p>
+        </div>
+
+        <div class="book-feature">
+          <figure class="book-cover">
+            <img
+              src="assets/book-steerable-rbyrct-cover.jpg"
+              alt="Book cover for Steerable Ray-by-Ray X-Ray Computed Tomography: A Plan to End Breast Cancer"
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Steerable Ray-by-Ray X-Ray Computed Tomography</strong>
+              <span>Edited by Richard Gordon and Syed Hussain Ather</span>
+            </figcaption>
+          </figure>
+
+          <div class="book-thesis">
+            <span>Central argument</span>
+            <h3>Under dose constraints, every ray should earn its place.</h3>
+            <p>
+              The book develops Ray-by-Ray Computed Tomography as a proposed
+              adaptive CT framework: after an initial low-dose scout scan,
+              subsequent rays can be directed toward uncertain regions,
+              high-gradient structure, or candidate lesions rather than spent
+              uniformly across the field.
+            </p>
+            <div class="book-step-grid" aria-label="RBYRCT book thesis steps">
+              <article>
+                <strong>Scout</strong>
+                <p>Build an initial uncertainty map with a bounded opening scan.</p>
+              </article>
+              <article>
+                <strong>Prioritize</strong>
+                <p>Score candidate rays by structure, residual error, and local risk.</p>
+              </article>
+              <article>
+                <strong>Adapt</strong>
+                <p>Spend the next rays where they can reduce ambiguity the most.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="cancerzap-assistant" aria-labelledby="cancerzap-title">
+          <div class="cancerzap-copy">
+            <span>CancerZap book assistant</span>
+            <h3 id="cancerzap-title">A simulator for the book's measurement-selection idea.</h3>
+            <p>
+              CancerZap turns the book's argument into a public, adjustable
+              research sketch. Move the controls to see how scout dose, ray
+              budget, structural uncertainty, and candidate-lesion focus shift
+              the simulated acquisition policy.
+            </p>
+          </div>
+
+          <div class="cancerzap-stage">
+            <div class="cancerzap-field" data-cancerzap-field aria-hidden="true">
+              <span class="zap-ray zap-ray-one"></span>
+              <span class="zap-ray zap-ray-two"></span>
+              <span class="zap-ray zap-ray-three"></span>
+              <span class="zap-ray zap-ray-four"></span>
+              <i class="zap-source"></i>
+              <i class="zap-target"></i>
+              <i class="zap-detector"></i>
+            </div>
+            <dl class="cancerzap-metrics" aria-label="CancerZap simulated policy metrics">
+              <div>
+                <dt>Focused rays</dt>
+                <dd data-cancerzap-metric="focused">58%</dd>
+              </div>
+              <div>
+                <dt>Coverage floor</dt>
+                <dd data-cancerzap-metric="coverage">73%</dd>
+              </div>
+              <div>
+                <dt>Info index</dt>
+                <dd data-cancerzap-metric="information">79</dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="cancerzap-controls" aria-label="CancerZap simulator controls">
+            <label>
+              <span>Scout scan <strong data-cancerzap-value="scout">18%</strong></span>
+              <input type="range" min="5" max="35" value="18" data-cancerzap-control="scout">
+            </label>
+            <label>
+              <span>Ray budget <strong data-cancerzap-value="rays">3.4k</strong></span>
+              <input type="range" min="800" max="6200" step="100" value="3400" data-cancerzap-control="rays">
+            </label>
+            <label>
+              <span>Structural uncertainty <strong data-cancerzap-value="uncertainty">68</strong></span>
+              <input type="range" min="0" max="100" value="68" data-cancerzap-control="uncertainty">
+            </label>
+            <label>
+              <span>Candidate-lesion focus <strong data-cancerzap-value="lesion">74</strong></span>
+              <input type="range" min="0" max="100" value="74" data-cancerzap-control="lesion">
+            </label>
+          </form>
+
+          <div class="cancerzap-prompts" aria-label="CancerZap book assistant prompts">
+            <button type="button" class="active" data-cancerzap-prompt="scout">Scout scan</button>
+            <button type="button" data-cancerzap-prompt="adaptive">Why adapt?</button>
+            <button type="button" data-cancerzap-prompt="background">Structured tissue</button>
+            <button type="button" data-cancerzap-prompt="validation">Validation</button>
+          </div>
+
+          <p class="cancerzap-answer" data-cancerzap-answer>
+            A scout scan gives the system an initial map of anatomy, gradients,
+            and unresolved regions. CancerZap then treats later rays as a limited
+            budget to allocate toward the parts of the reconstruction still asking
+            the hardest questions.
+          </p>
+        </div>
+
+        <div class="book-figure-grid" aria-label="CancerZap simulation artifacts">
+          <figure>
+            <img
+              src="assets/cancerzap-lesion-targeting.jpg"
+              alt="Composite simulation panels for lesion-targeting adaptive RBYRCT experiments"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Lesion targeting panels</span>
+              <strong>Adaptive policies can be stress-tested against controlled targets.</strong>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/cancerzap-dose-error.jpg"
+              alt="Dose versus tumor error plot from RBYRCT simulation experiments"
+              loading="lazy"
+            >
+            <figcaption>
+              <span>Dose-error sketch</span>
+              <strong>Simulation asks where the measurement budget stops buying clarity.</strong>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="research-boundary book-boundary">
+          CancerZap is a research and education simulator for the book companion.
+          It is not a medical device, not a diagnostic tool, not medical advice,
+          and not cleared or approved for patient care.
+        </p>
       </section>
 
       <section class="section evidence" id="evidence" aria-labelledby="evidence-title">

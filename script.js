@@ -114,6 +114,119 @@ promptButtons.forEach((button) => {
   });
 });
 
+const cancerZapControls = document.querySelectorAll('[data-cancerzap-control]');
+const cancerZapValues = {
+  scout: document.querySelector('[data-cancerzap-value="scout"]'),
+  rays: document.querySelector('[data-cancerzap-value="rays"]'),
+  uncertainty: document.querySelector('[data-cancerzap-value="uncertainty"]'),
+  lesion: document.querySelector('[data-cancerzap-value="lesion"]'),
+};
+const cancerZapMetrics = {
+  focused: document.querySelector('[data-cancerzap-metric="focused"]'),
+  coverage: document.querySelector('[data-cancerzap-metric="coverage"]'),
+  information: document.querySelector('[data-cancerzap-metric="information"]'),
+};
+const cancerZapField = document.querySelector('[data-cancerzap-field]');
+const cancerZapAnswer = document.querySelector('[data-cancerzap-answer]');
+const cancerZapPromptButtons = document.querySelectorAll('[data-cancerzap-prompt]');
+let cancerZapPrompt = 'scout';
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function formatRayBudget(value) {
+  return `${(value / 1000).toFixed(value >= 1000 ? 1 : 0)}k`;
+}
+
+function readCancerZapState() {
+  return Array.from(cancerZapControls).reduce(
+    (state, control) => ({
+      ...state,
+      [control.dataset.cancerzapControl]: Number(control.value),
+    }),
+    {},
+  );
+}
+
+function modelCancerZap(state) {
+  const focusShare = Math.round(
+    clamp(28 + state.uncertainty * 0.24 + state.lesion * 0.34 - state.scout * 0.16, 24, 84),
+  );
+  const coverage = Math.round(
+    clamp(44 + state.scout * 0.95 + (100 - focusShare) * 0.18 + (state.rays / 6200) * 12, 48, 94),
+  );
+  const information = Math.round(
+    clamp(38 + Math.log2(state.rays / 800) * 8 + state.uncertainty * 0.12 + state.lesion * 0.14 + state.scout * 0.08, 35, 98),
+  );
+  const nextFocus = Math.round(clamp(36 + state.lesion * 0.34, 34, 72));
+  const targetSize = Math.round(clamp(54 + coverage * 0.32, 66, 88));
+
+  return {
+    focusShare,
+    coverage,
+    information,
+    nextFocus,
+    targetSize,
+    reserve: Math.round(state.rays * focusShare / 100),
+    broad: Math.round(state.rays * (100 - focusShare) / 100),
+  };
+}
+
+function buildCancerZapAnswer(state, model) {
+  const answers = {
+    scout:
+      `At a ${state.scout}% scout setting, CancerZap treats the first pass as an uncertainty map rather than a finished image. The simulated policy keeps about ${model.broad.toLocaleString()} rays for broad coverage and reserves ${model.reserve.toLocaleString()} rays for unresolved structure.`,
+    adaptive:
+      `The adaptive move is to stop treating every measurement as equal. In this setting, ${model.focusShare}% of the ray budget is aimed toward high-gradient or candidate-lesion regions while the coverage floor stays near ${model.coverage}%, so the simulator does not simply tunnel into one bright feature.`,
+    background:
+      `The book's structured-background simulations ask whether small targets are hidden by anatomy-like texture, not just random noise. CancerZap raises ray priority when uncertainty and lesion focus are high because those are the conditions where ordinary uniform sampling can spend dose on already-understood tissue.`,
+    validation:
+      `A public claim would need locked phantoms, noise and motion stress tests, limited-angle studies, dose maps, repeatable ray logs, and reader-relevant task metrics. This assistant is only a research sketch; clinical credibility has to come from controlled validation, not from the slider values.`,
+  };
+
+  return answers[cancerZapPrompt] || answers.scout;
+}
+
+function updateCancerZap() {
+  if (!cancerZapControls.length || !cancerZapAnswer) return;
+
+  const state = readCancerZapState();
+  const model = modelCancerZap(state);
+
+  if (cancerZapValues.scout) cancerZapValues.scout.textContent = `${state.scout}%`;
+  if (cancerZapValues.rays) cancerZapValues.rays.textContent = formatRayBudget(state.rays);
+  if (cancerZapValues.uncertainty) cancerZapValues.uncertainty.textContent = state.uncertainty;
+  if (cancerZapValues.lesion) cancerZapValues.lesion.textContent = state.lesion;
+
+  if (cancerZapMetrics.focused) cancerZapMetrics.focused.textContent = `${model.focusShare}%`;
+  if (cancerZapMetrics.coverage) cancerZapMetrics.coverage.textContent = `${model.coverage}%`;
+  if (cancerZapMetrics.information) cancerZapMetrics.information.textContent = model.information;
+
+  if (cancerZapField) {
+    cancerZapField.style.setProperty('--zap-focus', `${model.nextFocus}%`);
+    cancerZapField.style.setProperty('--zap-size', `${model.targetSize}px`);
+  }
+
+  cancerZapAnswer.textContent = buildCancerZapAnswer(state, model);
+}
+
+cancerZapControls.forEach((control) => {
+  control.addEventListener('input', updateCancerZap);
+});
+
+cancerZapPromptButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    cancerZapPrompt = button.dataset.cancerzapPrompt;
+    cancerZapPromptButtons.forEach((item) => {
+      item.classList.toggle('active', item === button);
+    });
+    updateCancerZap();
+  });
+});
+
+updateCancerZap();
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const logoGlobe = document.querySelector('[data-logo-globe]');
 

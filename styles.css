@@ -311,6 +311,7 @@ nav a:hover {
 .roadmap h2,
 .program h2,
 .engineering-reference h2,
+.book-companion h2,
 .evidence h2,
 .demo h2,
 .contact h2 {
@@ -1220,6 +1221,381 @@ nav a:hover {
   margin: 0;
 }
 
+.book-companion {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(232, 162, 74, 0.18), transparent 27rem),
+    radial-gradient(circle at 12% 82%, rgba(41, 211, 199, 0.14), transparent 32rem),
+    linear-gradient(135deg, #101b18 0%, #182721 52%, #080d0c 100%);
+  color: #fff;
+}
+
+.book-heading {
+  align-items: start;
+}
+
+.book-heading p,
+.book-thesis p,
+.cancerzap-copy p,
+.cancerzap-answer {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.book-feature {
+  display: grid;
+  gap: clamp(24px, 5vw, 64px);
+  grid-template-columns: minmax(220px, 0.44fr) minmax(0, 1fr);
+  margin-bottom: clamp(28px, 5vw, 56px);
+}
+
+.book-cover {
+  align-self: start;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+  margin: 0;
+  overflow: hidden;
+}
+
+.book-cover img {
+  aspect-ratio: 3 / 4.8;
+  object-fit: cover;
+  width: 100%;
+}
+
+.book-cover figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.book-cover strong {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.book-cover span,
+.book-thesis > span,
+.cancerzap-copy > span,
+.book-figure-grid span {
+  color: var(--amber);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.book-thesis {
+  align-content: center;
+  display: grid;
+}
+
+.book-thesis h3 {
+  font-size: clamp(2.1rem, 5vw, 5.6rem);
+  line-height: 0.96;
+  margin: 14px 0 22px;
+  max-width: 980px;
+}
+
+.book-thesis p {
+  font-size: clamp(1.02rem, 1.6vw, 1.28rem);
+  line-height: 1.72;
+  margin: 0;
+  max-width: 900px;
+}
+
+.book-step-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(24px, 4vw, 44px);
+}
+
+.book-step-grid article {
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 5px solid var(--teal);
+  min-height: 190px;
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.book-step-grid article:nth-child(2) {
+  border-top-color: var(--amber);
+}
+
+.book-step-grid article:nth-child(3) {
+  border-top-color: var(--green);
+}
+
+.book-step-grid strong {
+  display: block;
+  font-size: clamp(1.34rem, 2vw, 2rem);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.book-step-grid p {
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.cancerzap-assistant {
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(300px, 1.12fr) minmax(280px, 0.8fr);
+  overflow: hidden;
+}
+
+.cancerzap-copy,
+.cancerzap-stage,
+.cancerzap-controls,
+.cancerzap-prompts,
+.cancerzap-answer {
+  background: rgba(4, 10, 9, 0.38);
+  padding: clamp(22px, 3vw, 38px);
+}
+
+.cancerzap-copy h3 {
+  font-size: clamp(1.8rem, 3.4vw, 3.5rem);
+  line-height: 1;
+  margin: 14px 0 18px;
+}
+
+.cancerzap-copy p {
+  line-height: 1.68;
+  margin: 0;
+}
+
+.cancerzap-stage {
+  display: grid;
+  gap: 18px;
+}
+
+.cancerzap-field {
+  --zap-focus: 58%;
+  --zap-size: 76px;
+  aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(circle at var(--zap-focus) 52%, rgba(232, 162, 74, 0.28), transparent 16%),
+    radial-gradient(circle at 50% 52%, rgba(41, 211, 199, 0.16), transparent 34%),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    #06110f;
+  background-size: auto, auto, 36px 36px, 36px 36px, auto;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+  position: relative;
+}
+
+.zap-ray,
+.zap-source,
+.zap-target,
+.zap-detector {
+  position: absolute;
+}
+
+.zap-ray {
+  background: linear-gradient(90deg, transparent, rgba(41, 211, 199, 0.86), rgba(232, 162, 74, 0.88), transparent);
+  height: 2px;
+  left: -12%;
+  top: 50%;
+  transform-origin: center;
+  width: 124%;
+}
+
+.zap-ray-one {
+  transform: rotate(13deg) translateY(-72px);
+}
+
+.zap-ray-two {
+  opacity: 0.72;
+  transform: rotate(-24deg) translateY(52px);
+}
+
+.zap-ray-three {
+  opacity: 0.54;
+  transform: rotate(46deg) translateY(4px);
+}
+
+.zap-ray-four {
+  opacity: 0.46;
+  transform: rotate(-5deg) translateY(-8px);
+}
+
+.zap-source {
+  background: var(--teal);
+  box-shadow: 0 0 28px rgba(41, 211, 199, 0.62);
+  height: 18px;
+  left: 9%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+}
+
+.zap-target {
+  border: 2px solid rgba(232, 162, 74, 0.9);
+  border-radius: 50%;
+  height: var(--zap-size);
+  left: var(--zap-focus);
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: var(--zap-size);
+}
+
+.zap-target::after {
+  background: var(--amber);
+  border-radius: 50%;
+  box-shadow: 0 0 26px rgba(232, 162, 74, 0.58);
+  content: "";
+  height: 16px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+}
+
+.zap-detector {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(41, 211, 199, 0.32));
+  bottom: 12%;
+  right: 9%;
+  top: 12%;
+  width: 12px;
+}
+
+.cancerzap-metrics {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+}
+
+.cancerzap-metrics div {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 14px;
+}
+
+.cancerzap-metrics dt {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.72rem;
+  font-weight: 850;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.cancerzap-metrics dd {
+  font-size: clamp(1.28rem, 2.2vw, 2rem);
+  font-weight: 850;
+  margin: 0;
+}
+
+.cancerzap-controls {
+  display: grid;
+  gap: 18px;
+}
+
+.cancerzap-controls label {
+  display: grid;
+  gap: 10px;
+}
+
+.cancerzap-controls label span {
+  align-items: baseline;
+  color: rgba(255, 255, 255, 0.76);
+  display: flex;
+  font-size: 0.84rem;
+  font-weight: 850;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.cancerzap-controls strong {
+  color: var(--teal);
+  font-size: 0.95rem;
+}
+
+.cancerzap-controls input {
+  accent-color: var(--teal);
+  width: 100%;
+}
+
+.cancerzap-prompts {
+  display: grid;
+  gap: 10px;
+  grid-column: 1 / 2;
+}
+
+.cancerzap-prompts button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 850;
+  min-height: 44px;
+  padding: 8px 10px;
+}
+
+.cancerzap-prompts button.active,
+.cancerzap-prompts button:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #06110f;
+}
+
+.cancerzap-answer {
+  border-left: 6px solid var(--teal);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  grid-column: 2 / 4;
+  line-height: 1.66;
+  margin: 0;
+}
+
+.book-figure-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  margin-top: clamp(28px, 5vw, 56px);
+}
+
+.book-figure-grid figure {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0;
+  overflow: hidden;
+}
+
+.book-figure-grid img {
+  aspect-ratio: 16 / 9;
+  background: #06110f;
+  object-fit: cover;
+  width: 100%;
+}
+
+.book-figure-grid figcaption {
+  display: grid;
+  gap: 10px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.book-figure-grid strong {
+  display: block;
+  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+  line-height: 1.12;
+}
+
+.book-boundary {
+  background: rgba(255, 255, 255, 0.92);
+  margin-top: 16px;
+}
+
 .evidence {
   background: #edf1ec;
 }
@@ -1638,6 +2014,10 @@ address a {
   .traceability-strip,
   .source-grid,
   .visual-atlas-grid,
+  .book-feature,
+  .book-step-grid,
+  .cancerzap-assistant,
+  .book-figure-grid,
   .lab-grid,
   .demo,
   .contact {
@@ -1680,6 +2060,15 @@ address a {
     min-height: auto;
   }
 
+  .cancerzap-prompts,
+  .cancerzap-answer {
+    grid-column: auto;
+  }
+
+  .book-cover {
+    max-width: 420px;
+  }
+
   .identity-visual {
     min-height: 360px;
   }
@@ -1702,8 +2091,15 @@ address a {
   }
 
   .strategy-controls,
-  .strategy-metrics {
+  .strategy-metrics,
+  .cancerzap-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .cancerzap-controls label span {
+    align-items: start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .hotspot.source,
