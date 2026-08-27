@@ -6,12 +6,12 @@
     <title>Janus Sphere Innovations | RBYRCT</title>
     <meta
       name="description"
-      content="Janus Sphere Innovations develops RBYRCT, ray-by-ray computed tomography for sparse, adaptive imaging research and the Steerable Ray-by-Ray X-Ray Computed Tomography book companion."
+      content="Janus Sphere Innovations develops RBYRCT and adaptive X-ray acquisition systems that use reconstruction feedback to help decide what to measure next across industrial and medical imaging research."
     >
     <meta property="og:title" content="Janus Sphere Innovations">
     <meta
       property="og:description"
-      content="Ray-by-ray computed tomography for sparse, adaptive imaging research and book companion simulation."
+      content="Adaptive X-ray acquisition and RBYRCT: imaging systems that use reconstruction feedback to help decide what to measure next."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://janus-sphere.com">
@@ -32,6 +32,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
+        <a href="#industrial">Industrial CT</a>
         <a href="#visuals">Visuals</a>
         <a href="#book">Book</a>
         <a href="#roadmap">Roadmap</a>
@@ -51,11 +52,69 @@
         </h1>
         <div id="cinematic-root" data-mode="homepage">
           <div class="cinematic-loading">
-            <p class="eyebrow">Adaptive computational imaging</p>
-            <strong>Janus Sphere Innovations</strong>
+            <p class="eyebrow">Adaptive X-ray acquisition</p>
+            <strong>Imaging that decides what to measure next.</strong>
             <span>
-              Loading the interactive RBYRCT homepage experience.
+              Janus Sphere Innovations is developing RBYRCT: adaptive imaging systems
+              that use information from intermediate reconstructions to guide subsequent measurements.
             </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section company-positioning" aria-labelledby="positioning-title">
+        <div class="section-kicker">Janus Sphere Innovations</div>
+        <div class="positioning-grid">
+          <div>
+            <h2 id="positioning-title">Imaging that decides what to measure next.</h2>
+          </div>
+          <div class="positioning-copy">
+            <p>
+              JSI is developing adaptive X-ray acquisition and Ray-by-Ray Computed Tomography (RBYRCT),
+              where information from an intermediate reconstruction can influence which measurement is acquired next.
+            </p>
+            <p class="stage-note">
+              Current work includes computational validation, acquisition-policy research, and development toward a
+              physical closed-loop prototype.
+            </p>
+          </div>
+        </div>
+
+        <div class="adaptive-loop" aria-label="Adaptive RBYRCT acquisition loop">
+          <span>Measure</span><i aria-hidden="true">→</i>
+          <span>Reconstruct</span><i aria-hidden="true">→</i>
+          <span>Analyze</span><i aria-hidden="true">→</i>
+          <span>Select next measurement</span><i aria-hidden="true">→</i>
+          <span>Repeat</span>
+        </div>
+      </section>
+
+      <section class="section applications" id="industrial" aria-labelledby="industrial-title">
+        <div class="section-heading applications-heading">
+          <div>
+            <div class="section-kicker">Industrial CT / NDT</div>
+            <h2 id="industrial-title">Spend the acquisition budget where the inspection needs information.</h2>
+          </div>
+          <p>
+            In industrial CT, adaptive measurement selection could be useful where inspection time, image noise,
+            defect detectability, resolution, and production throughput compete for the same acquisition budget.
+            JSI is investigating whether closed-loop acquisition can make those tradeoffs more deliberate.
+          </p>
+        </div>
+
+        <div class="objective-grid" aria-label="Adaptive imaging objectives by application">
+          <article>
+            <span>Industrial imaging</span>
+            <h3>Inspection efficiency</h3>
+            <p>Inspection time · noise · resolution · defect information</p>
+          </article>
+          <article>
+            <span>Medical imaging</span>
+            <h3>Patient and diagnostic value</h3>
+            <p>Dose · diagnostic information · scan experience · time</p>
+          </article>
+          <div class="objective-core">
+            <strong>Same closed-loop architecture.</strong> Different objectives, constraints, and evidence requirements.
           </div>
         </div>
       </section>
@@ -63,15 +122,15 @@
       <section class="signal-strip" aria-label="Research signals">
         <div>
           <span>Focus</span>
-          <strong>Sparse adaptive imaging</strong>
+          <strong>Adaptive X-ray acquisition</strong>
         </div>
         <div>
           <span>Prototype</span>
-          <strong>WebGL research instrument</strong>
+          <strong>Computational validation → physical prototype</strong>
         </div>
         <div>
           <span>Baselines</span>
-          <strong>Fan, random, targeted rays</strong>
+          <strong>Fixed, random, and adaptive strategies</strong>
         </div>
       </section>
 
@@ -94,12 +153,12 @@
         <div class="section-heading roadmap-heading">
           <div>
             <div class="section-kicker">Translation roadmap</div>
-            <h2 id="roadmap-title">From physical insight to clinical-grade evidence.</h2>
+            <h2 id="roadmap-title">From computational evidence to real-world imaging systems.</h2>
           </div>
           <p>
-            Janus Sphere advances RBYRCT through a staged path: first proving
-            the scientific question, then engineering the instrument, and only
-            then moving toward validation, translation, and responsible commercialization.
+            Janus Sphere advances RBYRCT through staged evidence: computational validation,
+            physical closed-loop acquisition, application-specific testing, and then responsible
+            translation into industrial or medical imaging systems.
           </p>
         </div>
 

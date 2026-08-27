@@ -265,6 +265,120 @@ nav a:hover {
   color: #fff;
 }
 
+.company-positioning {
+  background: #f8fbf8;
+  border-bottom: 1px solid var(--line);
+}
+
+.positioning-grid {
+  display: grid;
+  gap: clamp(28px, 5vw, 76px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+}
+
+.positioning-grid h2 {
+  font-size: clamp(2.8rem, 6vw, 6.2rem);
+  line-height: 0.95;
+  max-width: 900px;
+}
+
+.positioning-copy {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.7;
+}
+
+.positioning-copy p {
+  margin-top: 0;
+}
+
+.stage-note {
+  border-left: 3px solid var(--teal);
+  color: var(--ink);
+  font-size: 0.98rem;
+  padding-left: 18px;
+}
+
+.adaptive-loop {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(36px, 6vw, 68px);
+  padding-top: 26px;
+}
+
+.adaptive-loop span {
+  background: var(--field);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 850;
+  padding: 12px 15px;
+}
+
+.adaptive-loop i {
+  color: var(--teal);
+  font-size: 1.3rem;
+  font-style: normal;
+}
+
+.applications {
+  background: #eaf0ec;
+}
+
+.applications-heading {
+  margin-bottom: clamp(30px, 5vw, 52px);
+}
+
+.applications-heading p {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.objective-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.objective-grid article {
+  background: var(--panel);
+  min-height: 220px;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.objective-grid article span {
+  color: var(--field-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.objective-grid h3 {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  margin: 18px 0 12px;
+}
+
+.objective-grid p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.objective-core {
+  background: var(--field);
+  color: rgba(255, 255, 255, 0.76);
+  grid-column: 1 / -1;
+  padding: 22px clamp(24px, 4vw, 42px);
+}
+
+.objective-core strong {
+  color: var(--teal);
+}
+
 .signal-strip {
   background: var(--field);
   color: #fff;
@@ -1997,6 +2111,8 @@ address a {
   }
 
   .signal-strip,
+  .positioning-grid,
+  .objective-grid,
   .intro-grid,
   .method-band,
   .section-heading,
@@ -2040,6 +2156,20 @@ address a {
 
   .hotspot span {
     min-width: min(230px, 76vw);
+  }
+
+  .objective-core {
+    grid-column: auto;
+  }
+
+  .adaptive-loop {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adaptive-loop i {
+    align-self: center;
+    transform: rotate(90deg);
   }
 
   .signal-strip div {
