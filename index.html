@@ -33,6 +33,7 @@
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
         <a href="#scanner">Scanner</a>
+        <a href="#battleship">Tumor hunt</a>
         <a href="#industrial">Industrial CT</a>
         <a href="#visuals">Visuals</a>
         <a href="#book">Book</a>
@@ -626,6 +627,85 @@
               The geometry and public steering logic mirror JSI's open RBYRCT software while keeping patent-sensitive
               implementation details out of the browser.
             </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section tumor-hunt" id="battleship" aria-labelledby="battleship-title">
+        <div class="section-heading battleship-heading">
+          <div>
+            <div class="section-kicker">Tumor Hunt / Battleship analogy</div>
+            <h2 id="battleship-title">A game-like way to explain what adaptive ray selection is trying to do.</h2>
+          </div>
+          <p>
+            This section turns RBYRCT into a Battleship-style metaphor: each shot is a measurement, the hidden board
+            stands in for a breast-equivalent phantom, and the goal is not to sweep the whole board blindly but to
+            discover where suspicious structure is hiding with as few shots as possible.
+          </p>
+        </div>
+
+        <div class="battleship-shell">
+          <div class="battleship-stage">
+            <div class="battleship-toolbar">
+              <span class="battleship-pill">Conceptual RBYRCT explainer</span>
+              <span class="battleship-pill subtle">Not a diagnostic game or clinical workflow</span>
+            </div>
+
+            <div class="battleship-boards">
+              <section class="battleship-board-panel" aria-labelledby="battle-board-title">
+                <div class="battleship-panel-heading">
+                  <span>Hidden board</span>
+                  <h3 id="battle-board-title">Probe the phantom</h3>
+                </div>
+                <p>Click a square to fire a measurement. Hits suggest a lesion location; near misses leave a weaker signal.</p>
+                <div class="battle-grid" data-battle-board role="grid" aria-label="Hidden tumor board"></div>
+              </section>
+
+              <section class="battleship-board-panel" aria-labelledby="battle-heat-title">
+                <div class="battleship-panel-heading">
+                  <span>Adaptive belief state</span>
+                  <h3 id="battle-heat-title">Suspicion map</h3>
+                </div>
+                <p>The browser updates a crude probability field from every shot, showing how RBYRCT-style feedback can guide the next measurement.</p>
+                <div class="battle-grid battle-grid-heat" data-battle-heatmap aria-label="Tumor suspicion heatmap"></div>
+              </section>
+            </div>
+
+            <div class="battleship-actions">
+              <button class="button primary" type="button" data-battle-hint>RBYRCT next-shot hint</button>
+              <button class="button" type="button" data-battle-random>Fire random shot</button>
+              <button class="button" type="button" data-battle-auto>Auto-play RBYRCT</button>
+              <button class="button ghost" type="button" data-battle-reset>New phantom</button>
+            </div>
+          </div>
+
+          <aside class="battleship-telemetry" aria-label="Tumor hunt telemetry">
+            <div class="scanner-telemetry-heading">
+              <span>Mission telemetry</span>
+              <strong data-battle-status>ready</strong>
+            </div>
+            <dl class="battleship-stats">
+              <div><dt>Shots fired</dt><dd data-battle-shots>0</dd></div>
+              <div><dt>Direct hits</dt><dd data-battle-hits>0</dd></div>
+              <div><dt>Lesions localized</dt><dd data-battle-lesions>0 / 0</dd></div>
+              <div><dt>Best next cell</dt><dd data-battle-best>—</dd></div>
+              <div><dt>Board coverage</dt><dd data-battle-coverage>0%</dd></div>
+              <div><dt>Highest suspicion</dt><dd data-battle-prob>0%</dd></div>
+            </dl>
+            <div class="scanner-equation">
+              <span>How to read it</span>
+              <code>miss → update belief → revisit suspicious structure</code>
+            </div>
+            <p class="battleship-copy" data-battle-copy>
+              Think of this as a public-safe metaphor for adaptive tomography. A random strategy throws measurements around
+              the board; an RBYRCT-style strategy tries to learn from each result and aim the next shot where the information gain looks best.
+            </p>
+            <div class="battleship-legend">
+              <span><i class="legend miss"></i> miss</span>
+              <span><i class="legend near"></i> suspicious / near</span>
+              <span><i class="legend hit"></i> hit</span>
+              <span><i class="legend suggested"></i> suggested next shot</span>
+            </div>
           </aside>
         </div>
       </section>
