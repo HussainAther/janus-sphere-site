@@ -32,9 +32,11 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#rbyrct">RBYRCT</a>
+        <a href="#scanner">Scanner</a>
         <a href="#industrial">Industrial CT</a>
         <a href="#visuals">Visuals</a>
         <a href="#book">Book</a>
+        <a href="#context">Breast cancer context</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#program">Program</a>
         <a href="#engineering">Engineering</a>
@@ -535,6 +537,99 @@
         </div>
       </section>
 
+      <section class="section scanner-lab" id="scanner" aria-labelledby="scanner-title">
+        <div class="section-heading scanner-heading">
+          <div>
+            <div class="section-kicker">Live RBYRCT scanner</div>
+            <h2 id="scanner-title">Steer a ray. Measure attenuation. Reconstruct in real time.</h2>
+          </div>
+          <p>
+            This browser instrument uses the public RBYRCT control-loop model: individual ray selection,
+            line-integral attenuation, Beer–Lambert transmission, and a MART-family multiplicative update.
+            Drag inside the phantom to steer the next ray, then fire it into the reconstruction.
+          </p>
+        </div>
+
+        <div class="scanner-shell">
+          <div class="scanner-stage-card">
+            <div class="scanner-toolbar">
+              <div class="scanner-mode-group" role="group" aria-label="Acquisition policy">
+                <button class="active" type="button" data-scan-policy="manual">Manual RBYRCT</button>
+                <button type="button" data-scan-policy="scout">Scout</button>
+                <button type="button" data-scan-policy="adaptive">Adaptive</button>
+                <button type="button" data-scan-policy="fan">Fan baseline</button>
+              </div>
+              <span class="scanner-live-dot"><i></i> live simulation</span>
+            </div>
+
+            <div class="scanner-canvases">
+              <div class="scanner-canvas-wrap">
+                <canvas data-rbyrct-gl aria-label="Interactive WebGL RBYRCT acquisition geometry"></canvas>
+                <div class="scanner-overlay-label top-left">SOURCE</div>
+                <div class="scanner-overlay-label top-right">DETECTOR</div>
+                <div class="scanner-overlay-help">drag inside the phantom to steer</div>
+              </div>
+              <div class="scanner-recon-wrap">
+                <canvas data-rbyrct-recon width="256" height="256" aria-label="Live MART reconstruction"></canvas>
+                <div class="scanner-recon-title">
+                  <span>RECONSTRUCTION</span>
+                  <strong data-scan-quality>initial estimate</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="scanner-controls">
+              <label>
+                <span>Steering angle <strong data-steer-value>0.0°</strong></span>
+                <input data-steer-angle type="range" min="-44" max="44" step="0.5" value="0">
+              </label>
+              <label>
+                <span>Source orbit <strong data-orbit-value>0°</strong></span>
+                <input data-source-orbit type="range" min="-180" max="180" step="1" value="0">
+              </label>
+              <label>
+                <span>MART relaxation <strong data-relax-value>0.18</strong></span>
+                <input data-mart-relax type="range" min="0.05" max="0.45" step="0.01" value="0.18">
+              </label>
+            </div>
+
+            <div class="scanner-actions">
+              <button class="button primary" type="button" data-fire-ray>Fire one ray</button>
+              <button class="button" type="button" data-auto-scan>Run 64 rays</button>
+              <button class="button ghost" type="button" data-reset-scan>Reset</button>
+            </div>
+          </div>
+
+          <aside class="scanner-telemetry" aria-label="Live scanner telemetry">
+            <div class="scanner-telemetry-heading">
+              <span>Ray telemetry</span>
+              <strong data-scan-state>ready</strong>
+            </div>
+            <dl>
+              <div><dt>Ray count</dt><dd data-ray-count>0</dd></div>
+              <div><dt>Path integral ∫μdl</dt><dd data-line-integral>—</dd></div>
+              <div><dt>Transmission I/I₀</dt><dd data-transmission>—</dd></div>
+              <div><dt>Detector signal</dt><dd data-detector-signal>—</dd></div>
+              <div><dt>Steer</dt><dd data-steer-readout>0.0°</dd></div>
+              <div><dt>Policy</dt><dd data-policy-readout>Manual RBYRCT</dd></div>
+            </dl>
+            <div class="scanner-equation">
+              <span>Forward model</span>
+              <code>I = I₀ exp(−∫ μ(s) ds)</code>
+            </div>
+            <div class="scanner-equation">
+              <span>Reconstruction update</span>
+              <code>fⱼ ← fⱼ (pᵢ / p̂ᵢ)<sup>λ</sup></code>
+            </div>
+            <p class="scanner-boundary">
+              Physics-grounded research demonstrator, not a clinical dose calculator or a hardware specification.
+              The geometry and public steering logic mirror JSI's open RBYRCT software while keeping patent-sensitive
+              implementation details out of the browser.
+            </p>
+          </aside>
+        </div>
+      </section>
+
       <section class="section method-band" aria-label="RBYRCT method">
         <article>
           <span>01</span>
@@ -676,6 +771,113 @@
               </p>
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="section breast-context" id="context" aria-labelledby="context-title">
+        <div class="section-heading context-heading">
+          <div>
+            <div class="section-kicker">Breast cancer in context</div>
+            <h2 id="context-title">A technology sits inside a century of medicine, culture, policy, and belief.</h2>
+          </div>
+          <p>
+            RBYRCT is not only a reconstruction question. Breast screening is a social institution: it joins
+            x-ray physics to public-health recommendations, regulation, anxiety, advocacy, access, cost, and the
+            philosophical problem of deciding what is worth measuring.
+          </p>
+        </div>
+
+        <div class="context-pillars">
+          <article>
+            <span>History</span>
+            <h3>From radiography to adaptive acquisition.</h3>
+            <p>
+              Breast imaging developed from early x-ray practice into dedicated mammography, digital systems,
+              tomosynthesis, and increasingly computational workflows. Each generation changed not only what could
+              be seen, but what counted as an acceptable tradeoff among dose, resolution, time, and uncertainty.
+            </p>
+          </article>
+          <article>
+            <span>Culture</span>
+            <h3>Screening became part of everyday life.</h3>
+            <p>
+              Breast cancer acquired an unusual public vocabulary: screening reminders, survivorship, pink-ribbon
+              advocacy, family stories, celebrity diagnoses, dense-breast notices, and the emotional weight of a
+              callback after an image. Imaging therefore acts in a cultural world, not only a technical one.
+            </p>
+          </article>
+          <article>
+            <span>Philosophy</span>
+            <h3>What should we measure next?</h3>
+            <p>
+              Every imaging system allocates attention. Conventional geometries encode that choice in advance.
+              RBYRCT asks whether measurement itself can become responsive: observe, update belief, and spend the next
+              ray where it can reduce uncertainty or test a clinically meaningful hypothesis.
+            </p>
+          </article>
+          <article>
+            <span>Politics & policy</span>
+            <h3>Screening rules are evidence translated into institutions.</h3>
+            <p>
+              Recommendations, quality standards, insurance coverage, device regulation, hospital procurement, and
+              state and federal notification rules determine how imaging reaches people. In the United States, the
+              USPSTF currently recommends biennial mammography from ages 40–74 for average-risk women, while FDA MQSA
+              rules set federal mammography quality standards and now require breast-density notification.
+            </p>
+          </article>
+          <article>
+            <span>Human stakes</span>
+            <h3>Earlier is valuable, but screening is never consequence-free.</h3>
+            <p>
+              Screening can find cancers before symptoms and reduce breast-cancer mortality, but it can also create
+              false positives, additional procedures, overdiagnosis, and uncertainty. A better imaging technology has
+              to improve the information tradeoff rather than pretend those tensions do not exist.
+            </p>
+          </article>
+          <article>
+            <span>Enterprise</span>
+            <h3>An invention matters only if it can become infrastructure.</h3>
+            <p>
+              Translation means more than a reconstruction metric: reproducible software, physical steering,
+              calibration, risk management, regulatory evidence, manufacturing, reimbursement, clinician workflow,
+              capital equipment economics, service, and ultimately trust. JSI is building toward that whole chain.
+            </p>
+          </article>
+        </div>
+
+        <div class="context-timeline" aria-label="Breast imaging history timeline">
+          <div class="timeline-intro">
+            <span>A compressed history</span>
+            <strong>Seeing the breast became progressively more computational.</strong>
+          </div>
+          <ol>
+            <li><time>1895</time><p>X-rays open a new way to inspect internal anatomy without surgery.</p></li>
+            <li><time>20th c.</time><p>Dedicated mammographic techniques evolve around breast-specific imaging and lower-dose practice.</p></li>
+            <li><time>1992</time><p>The U.S. Mammography Quality Standards Act establishes a national quality framework for mammography facilities.</p></li>
+            <li><time>2000s</time><p>Digital mammography moves acquisition, storage, display, and analysis into a computational pipeline.</p></li>
+            <li><time>2010s</time><p>Digital breast tomosynthesis expands quasi-3D screening and makes acquisition geometry more visible to patients and clinicians.</p></li>
+            <li><time>2024</time><p>USPSTF screening guidance moves routine average-risk screening to age 40; federal breast-density notification requirements take effect.</p></li>
+            <li><time>Next</time><p>Adaptive acquisition asks whether the imaging geometry itself can respond to information as the scan unfolds.</p></li>
+          </ol>
+        </div>
+
+        <div class="mission-manifesto">
+          <span>Janus Sphere mission</span>
+          <h3>Make every measurement earn its place.</h3>
+          <p>
+            Our long-range mission is to develop imaging systems that use exposure and acquisition time deliberately:
+            enough information to answer the diagnostic question, fewer measurements that add little, and an auditable
+            record of why the system chose what to measure next. The ambition is large; the development standard is
+            evidence first.
+          </p>
+        </div>
+
+        <div class="context-sources">
+          <span>Read the public evidence behind this context</span>
+          <a href="https://www.cancer.gov/types/breast/screening">NCI: Breast Cancer Screening</a>
+          <a href="https://www.cancer.gov/types/breast/screening/mammograms">NCI: Mammograms</a>
+          <a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening">USPSTF: Breast Cancer Screening</a>
+          <a href="https://www.fda.gov/radiation-emitting-products/mammography-quality-standards-act-mqsa-and-mqsa-program/regulations-mqsa">FDA: MQSA Regulations</a>
         </div>
       </section>
 
@@ -1002,5 +1204,6 @@
 
     <script type="module" src="cinematic/assets/index-Cw_JyPEG.js"></script>
     <script src="script.js"></script>
+    <script src="scanner.js"></script>
   </body>
 </html>
