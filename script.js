@@ -1,13 +1,13 @@
 const evidenceImages = {
   butterfly: {
-    src: 'assets/butterfly-ground-truth.png',
-    alt: 'Butterfly phantom ground truth',
-    caption: 'Butterfly ground truth, used as a textured reconstruction target.',
+    src: 'assets/butterfly-near-reconstruction.png',
+    alt: 'Near-converged butterfly sparse-ray reconstruction',
+    caption: 'Butterfly — near-converged RBYRCT-inspired reconstruction with restrained sparse-view residuals.',
   },
   marilyn: {
-    src: 'assets/marilyn-ground-truth.png',
-    alt: 'Marilyn phantom ground truth',
-    caption: 'Marilyn ground truth from the RBYRCT evidence panel.',
+    src: 'assets/marilyn-near-reconstruction.png',
+    alt: 'Near-converged Marilyn sparse-ray reconstruction',
+    caption: 'Marilyn — near-converged RBYRCT-inspired reconstruction preserving the source structure with mild reconstruction residuals.',
   },
   random: {
     src: 'assets/shepp-random-1200.png',
