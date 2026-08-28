@@ -9,15 +9,15 @@ const evidenceImages = {
     alt: 'Near-converged Marilyn sparse-ray reconstruction',
     caption: 'Marilyn — near-converged RBYRCT-inspired reconstruction preserving the source structure with mild reconstruction residuals.',
   },
-  random: {
-    src: 'assets/shepp-random-1200.png',
-    alt: 'Shepp-Logan random ray reconstruction at 1200 rays',
-    caption: 'Random 1.2k ray reconstruction showing sparse coverage behavior.',
+  rbyrct: {
+    src: 'assets/marilyn-rbyrct-row.png',
+    alt: 'RBYRCT Marilyn reconstructions at 1,000, 5,000, and 10,000 rays',
+    caption: 'RBYRCT — Marilyn reconstruction progression at 1,000, 5,000, and 10,000 rays.',
   },
   fan: {
-    src: 'assets/shepp-fan-1200.png',
-    alt: 'Shepp-Logan fan ray reconstruction at 1200 rays',
-    caption: 'Fan 1.2k ray reconstruction used as a structured baseline.',
+    src: 'assets/marilyn-fan-row.png',
+    alt: 'Fan Marilyn reconstructions at 1,000, 5,000, and 10,000 rays',
+    caption: 'Fan — Marilyn reconstruction progression at 1,000, 5,000, and 10,000 rays.',
   },
 };
 
